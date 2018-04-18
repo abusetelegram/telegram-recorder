@@ -2,9 +2,8 @@ from telethon import TelegramClient, events, utils
 from telethon.tl.functions.messages import ForwardMessagesRequest
 from telethon.tl.types import *
 from data import *
+import time
 
-# These example values won't work. You must get your own api_id and
-# api_hash from https://my.telegram.org, under API Development.
 client = TelegramClient('session_file', api_id, api_hash, update_workers=1, spawn_read_thread=False)
 client.start()
 
@@ -12,11 +11,7 @@ client.start()
 @client.on(events.NewMessage)
 def my_event_handler(event):
     to_id = event.message.to_id
-    print('--new message--')
-    print('sender: ' + str(event.input_sender))
-    print('to: ' + str(to_id))
-    print('--EOF--')
-    print('message:' + event.raw_text)
+    printer(event)
 
     # Group listener
     if to_id.channel_id in listened_groups_id and event.out is False:
@@ -38,3 +33,17 @@ def my_event_handler(event):
 
 
 client.idle()
+
+
+# Helper classes
+
+def printer(event):
+    print('--income new message--')
+    print('time: ' + time.time())
+    print('sender: ' + str(event.input_sender))
+    print('to: ' + str(event.message.to_id))
+    print('--EOF--')
+    if event.raw_text == '':
+        print('message does not contain text')
+    else:
+        print(event.raw_text)
