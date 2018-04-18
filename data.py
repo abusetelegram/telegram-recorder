@@ -9,4 +9,4 @@ listened_persons_id = [
 
 ]
 
-fwd_channel = 0 # Channel ID
+fwd_channel = []
