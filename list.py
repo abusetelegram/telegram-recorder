@@ -13,3 +13,5 @@ for single in dialog:
 
 F.write(result)
 F.close()
+
+print("Information has wrote in list.txt")
