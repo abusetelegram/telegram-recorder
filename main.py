@@ -86,12 +86,12 @@ Group ID: {0}
         ))
 
         # Send Details
-        message = sendMessage(compose(), mtype='group')
+        message = sendMessage(compose(), mtype='all')
         # client(SendMessageRequest(destination, message, entities=msg_entities))
         client.send_message(destination, message, parse_mode='md')
 
     # Person listener
-    if event.input_sender in listened_persons_id:
+    if event.input_sender.user_id in listened_persons_id:
         # FWD message to channel
         fwd = client(ForwardMessagesRequest(
             from_peer=event.message.to_id,  # who sent these messages?
@@ -100,7 +100,7 @@ Group ID: {0}
         ))
 
         # Send Details
-        message = sendMessage(compose(), mtype='user')
+        message = sendMessage(compose(), mtype='all')
         #client(SendMessageRequest(destination, message))
         client.send_message(destination, message, parse_mode='md')
 
