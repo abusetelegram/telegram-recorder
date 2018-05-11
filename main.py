@@ -76,7 +76,7 @@ Group ID: {0}
     printer(event)
 
     # Group listener
-
+    # Add more IF condition if you want to listen more event.
     if to_id.channel_id in listened_groups_id and event.out is False:
         # FWD message to channel
         fwd = client(ForwardMessagesRequest(
@@ -86,11 +86,13 @@ Group ID: {0}
         ))
 
         # Send Details
+        # change mtype if you want only user/group info
         message = sendMessage(compose(), mtype='all')
         # client(SendMessageRequest(destination, message, entities=msg_entities))
         client.send_message(destination, message, parse_mode='md')
 
     # Person listener
+    # Note: some event dont have user_id, catch exception accrodingly.
     if event.input_sender.user_id in listened_persons_id:
         # FWD message to channel
         fwd = client(ForwardMessagesRequest(
