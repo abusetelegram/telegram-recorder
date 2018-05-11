@@ -11,8 +11,10 @@ from telethon.extensions.markdown import parse
 client = TelegramClient('session_file', api_id, api_hash, update_workers=1, spawn_read_thread=False)
 client.start()
 
-destination = PeerChannel(fwd_channel[0])  # If you like to transfer to more places, add accordingly
+# Set Offline to keep things work underground.
+client(UpdateStatusRequest(offline=True))
 
+destination = PeerChannel(fwd_channel[0])  # If you like to transfer to more places, add accordingly
 
 @client.on(events.NewMessage(incoming=True))
 def my_event_handler(event):
