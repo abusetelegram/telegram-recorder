@@ -53,8 +53,8 @@ Telegram是个好地方，不错，对于熟悉的人之间的交流是的。但
 ## 工具说明
 - `login.py` 用于登陆
 - `list.py` 用于获取当前账号所有聊天记录的 ID  
-    - 会在当前目录产生一个`list.txt`，格式是：`群组名（用户名）|ID`
-    - 然后就可以补全监控列表(在`data.py`，`listened_groups_id`群组ID, `listened_persons_id`人ID)了，可以填入多个，用逗号隔开。填入对应ID即可
+    - 会在当前目录产生一个`list.txt`，格式是：`群组名（用户名）|ID`  
+    - 然后就可以补全监控列表(在`data.py`，`listened_groups_id`群组ID, `listened_persons_id`人ID)了，可以填入多个，用逗号隔开。填入对应ID即可  
     - `fwd_channel` 是目的地，超级群或者频道ID均可
 - `main.py` 跑起来！
 
