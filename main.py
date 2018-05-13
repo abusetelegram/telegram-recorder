@@ -1,6 +1,7 @@
 from telethon import TelegramClient, events, utils
 from telethon.tl.functions.messages import ForwardMessagesRequest
 from telethon.tl.functions.messages import SendMessageRequest
+from telethon.tl.functions.account import UpdateStatusRequest
 from telethon.tl.types import *
 from data import *
 
