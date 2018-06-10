@@ -96,7 +96,7 @@ Group ID: {0}
 
     # Person listener
     # Note: some event dont have user_id, catch exception accrodingly.
-    if event.input_sender.user_id in listened_persons_id:
+    elif event.input_sender.user_id in listened_persons_id:
         # FWD message to channel
         fwd = client(ForwardMessagesRequest(
             from_peer=event.message.to_id,  # who sent these messages?
