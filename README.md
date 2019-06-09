@@ -5,7 +5,7 @@
 Forward anything to a channel/group with a user identity on Telegram.  
 If you have trouble using this project, join the demo group listed below.
 
-联动项目：https://github.com/NeverBehave/AlwaysOnline-
+联动项目：https://github.com/abusetelegram/AlwaysOnline-
 
 # 写在前面  
 
